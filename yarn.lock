@@ -36,17 +36,15 @@
   dependencies:
     nprogress "^0.2.0"
 
-"@js-from-routes/client@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@js-from-routes/client/-/client-1.0.3.tgz#5f1312eb266eda340e3e971b840a06db60205a5b"
-  integrity sha512-yvWuPcLPi3Yv9JjswVfSskY/0WnOAe0Sd+bsdGGIflkUq+suWNY+o9VvIFMb6WaR1pSYOYEfIyE+to+2i/abGA==
-  dependencies:
-    "@js-from-routes/core" "^1.0.0"
-
-"@js-from-routes/core@^1.0.0":
+"@js-from-routes/core@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@js-from-routes/core/-/core-1.0.2.tgz#682c6b18c479b6a80cdc94a0d7e9863d8bbb26a3"
   integrity sha512-7VEYGz4VfkgFb7MDtGEIaGYvn/9oleBaRqtSREFuV9hPooeyrI+ghsP8U4WJlCHFndtTbatUTzXRljt1zJH4Gw==
+
+"@js-from-routes/inertia@^1.10.2":
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@js-from-routes/inertia/-/inertia-1.10.2.tgz#d1098717272c3a7bff0d20d402c0ce0b6cb2f16e"
+  integrity sha512-4Lv016v6ir7Ayp8ZsWzlMZfOEHaajd53ZwiueUzrtzkkZ5+HmUW9AmtEK29jom4qmBLVksVyreQL6BjxdEx6/w==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
