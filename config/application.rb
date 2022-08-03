@@ -31,7 +31,11 @@ module InertiaExampleRails7
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+    # to skip assets, scaffolds.css, test framework, helpers, view
+    config.generators do |g|
+      g.test_framework nil # to skip test framework
+      g.template_engine nil # to skip test framework
+      g.helper nil
+    end
   end
 end
