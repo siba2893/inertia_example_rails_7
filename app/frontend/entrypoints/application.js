@@ -27,4 +27,11 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
 
-import './vue-setup'
+import '../styles/application.css';
+
+import { InertiaProgress } from '@inertiajs/progress'
+import { buildApp } from '../app'
+
+InertiaProgress.init()
+
+buildApp()
