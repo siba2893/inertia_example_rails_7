@@ -49,5 +49,6 @@ group :development do
   # gem "spring"
 end
 
-
 gem "inertia_rails", "~> 2.0"
+
+gem "vite_rails", "~> 3.0"
