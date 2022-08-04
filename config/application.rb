@@ -23,6 +23,8 @@ module InertiaExampleRails7
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    config.autoload_paths << "#{Rails.root}/lib"
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -33,9 +35,11 @@ module InertiaExampleRails7
 
     # to skip assets, scaffolds.css, test framework, helpers, view
     config.generators do |g|
-      g.test_framework nil # to skip test framework
-      g.template_engine nil # to skip test framework
-      g.helper nil
+      g.template_engine nil #to skip views
+      g.test_framework  nil #to skip test framework
+      g.assets  false
+      g.helper false
+      g.stylesheets false
     end
   end
 end
