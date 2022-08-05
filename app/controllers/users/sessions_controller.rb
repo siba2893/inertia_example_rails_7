@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
+  include Inertiable
+  include InertiaFlash
+
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+    super do
+      render inertia: 'auth/Login', props: { resource: resource } and return
+    end
+  end
 
   # POST /resource/sign_in
   # def create
