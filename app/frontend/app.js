@@ -2,6 +2,22 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { resolvePage } from './pages'
 import { h, createApp, createSSRApp } from 'vue'
 import api from './api'
+import {
+  // create naive ui
+  create,
+  // component
+  NLayout,
+  NLayoutHeader,
+  NLayoutSider,
+} from 'naive-ui'
+
+const naive = create({
+  components: [
+    NLayout,
+    NLayoutHeader,
+    NLayoutSider,
+  ]
+})
 
 export function buildApp (options = {}) {
   return createInertiaApp({
@@ -21,7 +37,9 @@ export function buildApp (options = {}) {
       }
 
       vueApp.config.globalProperties.$api = api;
-      vueApp.use(plugin).mount(el);
+      vueApp.use(naive)
+      vueApp.use(plugin)
+      vueApp.mount(el)
     },
     ...options
   });
