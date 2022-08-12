@@ -1,7 +1,14 @@
 {
   "devDependencies": {
+    "@iconify-json/carbon": "^1.1.7",
+    "@iconify-json/fluent": "^1.1.15",
+    "@iconify-json/lucide": "^1.1.38",
+    "@vicons/fluent": "^0.12.0",
     "@vitejs/plugin-vue": "^3.0.1",
+    "@vue/compiler-sfc": "^3.2.37",
     "naive-ui": "^2.32.1",
+    "unplugin-icons": "^0.14.8",
+    "unplugin-vue-components": "^0.22.4",
     "vfonts": "^0.0.3",
     "vite": "^3.0.4",
     "vite-plugin-full-reload": "^1.0.3",
@@ -18,7 +25,9 @@
     "add": "^2.0.6",
     "axios": "^0.27.2",
     "sass": "^1.54.3",
+    "vite-plugin-windicss": "^1.8.7",
     "vue": "^3.2.37",
+    "windicss": "^3.5.6",
     "yarn": "^1.22.19"
   }
 }

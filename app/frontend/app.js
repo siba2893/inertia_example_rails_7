@@ -6,16 +6,36 @@ import {
   // create naive ui
   create,
   // component
+  NGrid,
   NLayout,
-  NLayoutHeader,
+  NLayoutContent,
   NLayoutSider,
+  NLayoutHeader,
+  NCard,
+  NForm,
+  NFormItemGi,
+  NInput,
+  NButton,
+  NSpace,
+  NMenu,
+  NIcon
 } from 'naive-ui'
 
 const naive = create({
   components: [
+    NGrid,
     NLayout,
-    NLayoutHeader,
+    NLayoutContent,
     NLayoutSider,
+    NLayoutHeader,
+    NCard,
+    NForm,
+    NFormItemGi,
+    NInput,
+    NButton,
+    NSpace,
+    NMenu,
+    NIcon
   ]
 })
 
@@ -36,7 +56,7 @@ export function buildApp (options = {}) {
         });
       }
 
-      vueApp.config.globalProperties.$api = api;
+      vueApp.config.globalProperties.$route = api;
       vueApp.use(naive)
       vueApp.use(plugin)
       vueApp.mount(el)

@@ -27,7 +27,9 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
 
-import '../styles/application.scss';
+import 'virtual:windi.css'
+// import 'virtual:windi-devtools'
+import '../styles/application.scss'
 
 import { InertiaProgress } from '@inertiajs/progress'
 import { buildApp } from '../app'
