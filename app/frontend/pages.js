@@ -13,7 +13,7 @@ export async function resolvePage (name) {
 
   page = import.meta.env.SSR ? page : (await page()).default
 
-  page = setupLayout(page)
+  page = setupLayout(page, name)
 
   return page
 }

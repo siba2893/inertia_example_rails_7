@@ -1,7 +1,15 @@
 import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { resolvePage } from './pages'
 import { h, createApp, createSSRApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
 import api from './api'
+
+import PrimeVue from 'primevue/config';
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: []
+})
 
 export function buildApp (options = {}) {
   return createInertiaApp({
@@ -21,7 +29,10 @@ export function buildApp (options = {}) {
       }
 
       vueApp.config.globalProperties.$api = api;
-      vueApp.use(plugin).mount(el);
+      vueApp.use(PrimeVue)
+      vueApp.use(plugin)
+      vueApp.use(router)
+      vueApp.mount(el);
     },
     ...options
   });
