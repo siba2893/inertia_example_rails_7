@@ -13,26 +13,27 @@ console.log('Vite ⚡️ Rails')
 
 console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify.app/guide/rails')
 
-// Example: Load Rails libraries in Vite.
-//
-// import * as Turbo from '@hotwired/turbo'
-// Turbo.start()
-//
-// import ActiveStorage from '@rails/activestorage'
-// ActiveStorage.start()
-//
-// // Import all channels.
-// const channels = import.meta.globEager('./**/*_channel.js')
-
-// Example: Import a stylesheet in app/frontend/index.css
-// import '~/index.css'
-
-import 'virtual:windi.css'
 import '../styles/application.scss'
 
+import React from 'react'
+import axios from 'axios'
+import { createInertiaApp } from '@inertiajs/inertia-react'
 import { InertiaProgress } from '@inertiajs/progress'
-import { buildApp } from '../app'
+import { resolvePage } from '../pages'
+import { createRoot } from 'react-dom/client'
 
-InertiaProgress.init()
+document.addEventListener('DOMContentLoaded', async () => {
+  const csrfToken = document.querySelector('meta[name=csrf-token]').content;
+  axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
 
-await buildApp()
+  InertiaProgress.init();
+
+  await createInertiaApp({
+    resolve: resolvePage,
+    setup({ el, App, props }) {
+      createRoot(el).render(
+        <App {...props} />
+      )
+    },
+  })
+})
