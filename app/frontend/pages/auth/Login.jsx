@@ -8,12 +8,14 @@ import {
   Input,
   Stack,
   Text,
-  Link,
   useColorModeValue
 } from '@chakra-ui/react'
 
+import { Link } from '@inertiajs/inertia-react'
+
 import AuthLayout from '@/layouts/AuthLayout'
 import { PasswordField } from '@/components/inputs/PasswordField'
+import RegistrationsApi from '../../api/Users/RegistrationsApi'
 
 const Login = () => {
   return (
@@ -22,7 +24,11 @@ const Login = () => {
         <Stack align={ 'center' }>
           <Heading fontSize={ '4xl' }>Sign in to your account</Heading>
           <Text fontSize={ 'lg' } color={ 'gray.600' }>
-            to enjoy all of our cool <Link color={ 'blue.400' }>features</Link> ✌️
+            If you don't have an account please &nbsp;
+            <Link href={ RegistrationsApi.new.path() }
+                  color={ 'blue.400' }>
+              Sign up
+            </Link> ✌️
           </Text>
         </Stack>
         <Box

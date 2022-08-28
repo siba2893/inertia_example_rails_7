@@ -17,6 +17,8 @@ export const PasswordField = React.forwardRef((props, ref) => {
   const inputRef = React.useRef(null)
   const mergeRef = useMergeRefs(inputRef, ref)
 
+  const label = props.label || 'Password'
+
   const onClickReveal = () => {
     onToggle()
 
@@ -29,7 +31,7 @@ export const PasswordField = React.forwardRef((props, ref) => {
 
   return (
     <FormControl>
-      <FormLabel htmlFor="password">Password</FormLabel>
+      <FormLabel htmlFor="password">{ label }</FormLabel>
       <InputGroup>
         <InputRightElement>
           <IconButton
