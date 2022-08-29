@@ -1,8 +1,10 @@
+import AuthLayout from '@layouts/AuthLayout'
+
 const Login = () => {
   return (
-    <div>
+    <AuthLayout>
       Login
-    </div>
+    </AuthLayout>
   );
 };
 
