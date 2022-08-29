@@ -1,8 +1,10 @@
+import { Stack } from '@mantine/core'
+
 const AuthLayout = ({ children }) => {
   return (
-    <div>
+    <Stack className={'h-full'} align={'center'} justify={'center'}>
       { children }
-    </div>
+    </Stack>
   );
 };
 
