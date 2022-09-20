@@ -1,9 +1,11 @@
-const Index = () => {
-  return (
-    <div>
-      Dashboard Index
-    </div>
-  );
-};
+import MainLayout from '@layouts/MainLayout'
 
-export default Index;
+const Index = ({ flash }) => {
+  return (
+    <MainLayout flash={ flash }>
+      Login
+    </MainLayout>
+  )
+}
+
+export default Index

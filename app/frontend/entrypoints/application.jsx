@@ -13,13 +13,14 @@ console.log('Vite ⚡️ Rails')
 
 console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify.app/guide/rails')
 
-import '../styles/application.scss'
+import 'virtual:windi.css'
+import '@styles/application.scss'
 
 import React from 'react'
 import axios from 'axios'
 import { createInertiaApp } from '@inertiajs/inertia-react'
 import { InertiaProgress } from '@inertiajs/progress'
-import { resolvePage } from '../pages'
+import { resolvePage } from '@/pages'
 import { createRoot } from 'react-dom/client'
 
 document.addEventListener('DOMContentLoaded', async () => {

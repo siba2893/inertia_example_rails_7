@@ -1,11 +1,11 @@
 import AuthLayout from '@layouts/AuthLayout'
 
-const Login = () => {
+const Login = ({ flash }) => {
   return (
-    <AuthLayout>
+    <AuthLayout flash={ flash }>
       Login
     </AuthLayout>
-  );
-};
+  )
+}
 
 export default Login;

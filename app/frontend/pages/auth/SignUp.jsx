@@ -1,9 +1,11 @@
-const SignUp = () => {
-  return (
-    <div>
-      SignUp
-    </div>
-  );
-};
+import AuthLayout from '@layouts/AuthLayout'
 
-export default SignUp;
+const SignUp = ({ flash }) => {
+  return (
+    <AuthLayout flash={ flash }>
+      SignUp
+    </AuthLayout>
+  )
+}
+
+export default SignUp
