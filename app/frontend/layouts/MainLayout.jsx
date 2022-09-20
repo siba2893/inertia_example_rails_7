@@ -1,9 +1,8 @@
-import { IconSun, IconMoonStars } from '@tabler/icons'
+import { IconHome } from '@tabler/icons'
 import {
-  ActionIcon,
   AppShell,
   Burger,
-  Group,
+  MediaQuery,
   Header,
   Navbar,
   Text,
@@ -18,22 +17,23 @@ const MainLayout = ({ children }) => {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
 
+  const navLinks = [
+    { icon: <IconHome size={ 16 }/>, color: 'blue', label: 'Dashboard', url: '/', section: 'dashboard' },
+  ];
+
   return (
     <AppShell
-      padding="md"
-      fixed
+      styles={ {
+        main: {
+          background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+        },
+      } }
+      navbarOffsetBreakpoint="sm"
+      asideOffsetBreakpoint="sm"
       navbar={
-        <Navbar
-          width={ { sm: 300 } }
-          style={ {
-            left: opened ? '0' : '-100%'
-          } }
-          sx={ {
-            overflow: "hidden",
-            transition: "left 320ms ease"
-          } }>
+        <Navbar p="md" hiddenBreakpoint="sm" hidden={ !opened } width={ { sm: 200, lg: 300 } }>
           <Navbar.Section grow mt="xs">
-            <MainLinks/>
+            <MainLinks data={ navLinks }/>
           </Navbar.Section>
           <Navbar.Section>
             <UserInfo/>
@@ -41,26 +41,22 @@ const MainLayout = ({ children }) => {
         </Navbar>
       }
       header={
-        <Header height={ 60 }>
-          <Group sx={ { height: '100%' } } px={ 20 } position="apart">
-            <Burger
-              opened={ opened }
-              onClick={ () => setOpened((o) => !o) }
-              size="sm"
-              color={ theme.colors.gray[6] }
-            />
-            <Text><b>Betting Journal</b></Text>
-          </Group>
+        <Header height={ 70 } p="md">
+          <div style={ { display: 'flex', alignItems: 'center', height: '100%' } }>
+            <MediaQuery largerThan="sm" styles={ { display: 'none' } }>
+              <Burger
+                opened={ opened }
+                onClick={ () => setOpened((o) => !o) }
+                size="sm"
+                color={ theme.colors.gray[6] }
+                mr="xl"
+              />
+            </MediaQuery>
+
+            <Text>Application header</Text>
+          </div>
         </Header>
       }
-      styles={ (theme) => ({
-        main: {
-          backgroundColor:
-            theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
-          paddingLeft: opened ? 'calc(var(--mantine-navbar-width, 0px) + 16px)' : '16px',
-          transition: "padding 500ms ease"
-        },
-      }) }
     >
       { children }
     </AppShell>

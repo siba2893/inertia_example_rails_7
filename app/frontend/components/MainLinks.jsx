@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { IconHome } from '@tabler/icons';
 import { ThemeIcon, UnstyledButton, Group, Text } from '@mantine/core';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react'
-
-const data = [
-  { icon: <IconHome size={ 16 }/>, color: 'blue', label: 'Home', url: '/', section: 'home' }
-];
 
 const MainLink = ({ icon, color, label, active, url }) => {
   return (
@@ -37,7 +32,7 @@ const MainLink = ({ icon, color, label, active, url }) => {
   )
 }
 
-const MainLinks = () => {
+const MainLinks = ({ data }) => {
   const { url } = usePage()
   const [activeIndex, setActiveIndex] = useState(0);
 
