@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def deep_underscore_params!(app_params = params)
     HashTransformer.snake_case(app_params, mutable: true)
   end
+
+  def after_sign_in_path_for(current_user)
+    root_path
+  end
 end

@@ -1,11 +1,9 @@
-import { Link } from "@inertiajs/inertia-react";
-
-const MainLayout = ({ children }) => (
-  <>
-    <div className="main">
+const MainLayout = ({ children }) => {
+  return (
+    <div>
       { children }
     </div>
-  </>
-)
+  );
+};
 
-export default page => <MainLayout children={page}/>
+export default MainLayout;

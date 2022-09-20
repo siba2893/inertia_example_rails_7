@@ -13,13 +13,13 @@ import {
 
 import { Link } from '@inertiajs/inertia-react'
 
-import AuthLayout from '@/layouts/AuthLayout'
-import { PasswordField } from '@/components/inputs/PasswordField'
-import RegistrationsApi from '../../api/Users/RegistrationsApi'
+import AuthLayout from '@layouts/AuthLayout'
+import { PasswordField } from '@components/inputs/PasswordField'
+import RegistrationsApi from '@api//Users/RegistrationsApi'
 
-const Login = () => {
+const Login = ({ flash }) => {
   return (
-    <AuthLayout>
+    <AuthLayout flash={ flash }>
       <Stack spacing={ 8 } mx={ 'auto' } maxW={ 'lg' } py={ 12 } px={ 6 }>
         <Stack align={ 'center' }>
           <Heading fontSize={ '4xl' }>Sign in to your account</Heading>

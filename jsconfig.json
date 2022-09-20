@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./app/frontend/*"],
+      "@components/*": ["./app/frontend/components/*"],
+      "@pages/*": ["./app/frontend/pages/*"],
+      "@layouts/*": ["./app/frontend/layouts/*"],
+      "@helpers/*": ["./app/frontend/helpers/*"],
+      "@api/*": ["./app/frontend/api/*"],
+      "@styles/*": ["./app/frontend/styles/*"]
+    }
+  }
+}

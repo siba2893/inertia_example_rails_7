@@ -19,7 +19,7 @@ import React from 'react'
 import axios from 'axios'
 import { createInertiaApp } from '@inertiajs/inertia-react'
 import { InertiaProgress } from '@inertiajs/progress'
-import { resolvePage } from '../pages'
+import { resolvePage } from '@/pages'
 import { createRoot } from 'react-dom/client'
 import { ChakraProvider } from '@chakra-ui/react'
 

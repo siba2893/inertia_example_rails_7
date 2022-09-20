@@ -1,6 +1,7 @@
 import { Container, Flex, useColorModeValue } from '@chakra-ui/react'
+import FlashMessages from '@components/shared/FlashMessages'
 
-const AuthLayout = ({ children }) => {
+const AuthLayout = ({ children, flash }) => {
   return (
     <>
       <Flex
@@ -11,6 +12,7 @@ const AuthLayout = ({ children }) => {
         <Container
           maxW="lg" py={ { base: '12', md: '24' } }
           px={ { base: '0', sm: '8' } }>
+          <FlashMessages flash={ flash }/>
           { children }
         </Container>
       </Flex>
