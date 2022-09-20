@@ -1,5 +1,16 @@
 import AuthLayout from '@layouts/AuthLayout'
-import { Anchor, Button, Checkbox, Container, Group, Paper, PasswordInput, Text, TextInput, Title } from '@mantine/core'
+import {
+  Anchor,
+  Button,
+  Checkbox,
+  Container,
+  Group,
+  Paper,
+  PasswordInput,
+  Text,
+  TextInput,
+  Title
+} from '@mantine/core'
 import { iVisitPrevent } from '@helpers/utils'
 import RegistrationsApi from '@api/Users/RegistrationsApi'
 import PasswordsApi from '@api/Users/PasswordsApi'
@@ -24,6 +35,7 @@ const SignUp = () => {
         <Paper withBorder shadow="md" p={ 30 } mt={ 30 } radius="md">
           <TextInput label="Email" placeholder="you@mantine.dev" required/>
           <PasswordInput label="Password" placeholder="Your password" required mt="md"/>
+          <PasswordInput label="Password Confirmation" placeholder="Confirm your password" required mt="md"/>
           <Group position="apart" mt="md">
             <Checkbox label="Remember me"/>
             <Anchor onClick={ (event) => iVisitPrevent(PasswordsApi.new.path(), event) } href="#" size="sm">

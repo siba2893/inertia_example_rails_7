@@ -1,8 +1,10 @@
-const Index = () => {
+import MainLayout from '@layouts/MainLayout'
+
+const Index = ({ flash }) => {
   return (
-    <div>
-      Dashboard Index
-    </div>
+    <MainLayout flash={ flash }>
+      Dashboard
+    </MainLayout>
   );
 };
 

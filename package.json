@@ -1,8 +1,8 @@
 {
   "devDependencies": {
     "@iconify-json/fluent": "^1.1.15",
+    "@iconify-json/mdi": "^1.1.31",
     "unplugin-icons": "^0.14.8",
-    "unplugin-vue-components": "^0.22.4",
     "vite": "^3.0.4",
     "vite-plugin-dynamic-import": "^1.1.1",
     "vite-plugin-full-reload": "^1.0.3",
@@ -22,6 +22,8 @@
     "@mantine/form": "^5.2.4",
     "@mantine/hooks": "^5.2.4",
     "@mantine/notifications": "^5.2.4",
+    "@svgr/core": "^6.3.1",
+    "@tabler/icons": "^1.95.0",
     "@vitejs/plugin-react": "^2.0.1",
     "add": "^2.0.6",
     "axios": "^0.27.2",
@@ -30,6 +32,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "sass": "^1.54.3",
+    "unplugin-auto-import": "^0.11.2",
     "yarn": "^1.22.19"
   }
 }

@@ -3,9 +3,9 @@ import path from 'path'
 import RubyPlugin from 'vite-plugin-ruby'
 import ReactPlugin from '@vitejs/plugin-react'
 import FullReload from 'vite-plugin-full-reload'
-import IconsResolver from 'unplugin-icons/resolver'
-import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import AutoImport from 'unplugin-auto-import/vite'
 import dynamicImport from 'vite-plugin-dynamic-import'
 import WindiCSS from 'vite-plugin-windicss'
 
@@ -16,12 +16,19 @@ export default defineConfig({
     ReactPlugin(),
     dynamicImport(),
     WindiCSS({ root: process.cwd() }),
-    Components({
+    AutoImport({
       resolvers: [
-        IconsResolver(),
+        IconsResolver({
+          prefix: 'Icon',
+          extension: 'jsx',
+        }),
       ],
     }),
-    Icons({ autoInstall: true, compiler: 'vue3' }),
+    Icons({
+      autoInstall: true,
+      compiler: 'jsx',
+      jsx: 'react'
+    }),
   ],
   resolve: {
     alias: [
