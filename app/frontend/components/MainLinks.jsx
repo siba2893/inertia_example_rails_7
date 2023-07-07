@@ -21,7 +21,7 @@ const MainLink = ({ icon, color, label, active, url }) => {
         },
       }) }
     >
-      <Group>
+      <Group noWrap>
         <ThemeIcon color={ color } variant="light">
           { icon }
         </ThemeIcon>

@@ -10,28 +10,39 @@ import {
 } from '@mantine/core'
 
 import { useState } from 'react'
+import { useViewportSize } from '@mantine/hooks'
+
 import UserInfo from '@components/UserInfo'
 import MainLinks from '@components/MainLinks'
 
 const MainLayout = ({ children }) => {
-  const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
+  const theme = useMantineTheme()
+  const [opened, setOpened] = useState(false)
+
+  const { width } = useViewportSize()
+  const isMobile = width <= 520
 
   const navLinks = [
     { icon: <IconHome size={ 16 }/>, color: 'blue', label: 'Dashboard', url: '/', section: 'dashboard' },
-  ];
+  ]
 
   return (
     <AppShell
       styles={ {
         main: {
           background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+          transition: "padding-left 500ms ease"
         },
       } }
-      navbarOffsetBreakpoint="sm"
-      asideOffsetBreakpoint="sm"
       navbar={
-        <Navbar p="md" hiddenBreakpoint="sm" hidden={ !opened } width={ { sm: 200, lg: 300 } }>
+        <Navbar
+          p={ "md" }
+          px={ opened ? 'md' : '0' }
+          width={ { base: opened ? '100%' : '0 !important', xs: opened ? '100%' : 0, sm: 250, lg: 300 } }
+          sx={ {
+            overflow: "hidden",
+            transition: "width 500ms ease, min-width 500ms ease, padding 500ms ease"
+          } }>
           <Navbar.Section grow mt="xs">
             <MainLinks data={ navLinks }/>
           </Navbar.Section>
@@ -53,7 +64,7 @@ const MainLayout = ({ children }) => {
               />
             </MediaQuery>
 
-            <Text>Application header</Text>
+            <Text>Recipe Costify</Text>
           </div>
         </Header>
       }
